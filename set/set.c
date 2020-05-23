@@ -84,11 +84,6 @@ int set_remove(Set *set,void **data)
     {
         prev->next=tmp->next;
     }
-    //set内的元素是动态分配的;
-    if(set->destroy!=NULL)
-    {
-        set->destroy(*data);
-    }
     free(tmp);
     tmp=NULL;
     set->size--;
